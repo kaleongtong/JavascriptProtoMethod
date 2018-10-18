@@ -4,102 +4,57 @@ In this repository I will demonstrate usage of several different Array and strin
 
 ## Number Prototype Function Examples
 
-### parseFloat - this function takes a string and turns into float.
+### parseFloat 
 
-The following example takes the string version of a number and turns it into a float. 
-let floatNum = '1.51234';
+This function takes a string and turns into float.
 
-console.log(Number.parseFloat(floatNum));
-/*1.51234*/
+When a string that is not a number gets passed into parseFloat the function willreturn NaN(short abbreviation for 'Not a Number').
 
-However, if we call parseFloat on a string that is not a number it will return a NaN(short abbreviation for 'Not a Number').
+### toExpontential 
 
-let fakeNum = 'notFloat';
-console.log(Number.parseFloat(fakeNum));
-/*NaN*/
+This function takes a number and prints it out in its exponential form
 
-There is another special case where if you call parseFloat on Infinity it will return Infinity instead.
+### toPrecision - 
 
-console.log(Number.parseFloat(Infinity));
-/*Infinity*/
+This function will round up a number to a specified digit.
 
-### toExpontential - takes a number and prints it out in exponential orm
-/*Example Usage of toExponential */
-console.log(Number.parseInt("2").toExponential(2));
-/*2.00e+0*/
-
-### toPrecision - takes a number and rounds it up to a specified digit
-
+```shell
 console.log(Number.parseFloat("34.6342").toPrecision(3));
 /*34.6*/
-
-console.log(Number.parseFloat("34.6342").toPrecision(0));
-/* results in an error */
+```
 
 ## String Prototype Function Examples
 
-### lastIndexOf - this function takes a term and returns the last index of the term in the string that calls it.
+### lastIndexOf 
 
-let sent = 'I love Hot Dog because Hot Dog is tasty.';
+This function returns the last index of the substring parameter.
 
-let searchTerm = 'Hot';
+Returns -1 if the substring was not found.
 
-console.log('The index of searchTerm is ' + sent.lastIndexOf(searchTerm));
-/* The index of searchTerm is 23 */
 
-let sent = 'I';
+### includes 
 
-console.log('Sentence reset. The index of searchTerm is ' + sent.lastIndexOf(searchTerm));
-/* The index of searchTerm is -1 */
+This function return true if given substring exists within the string itself.
 
-### includes - With a given string this method checks if the string exists within another string that calls it.
-
-/*Example Usage of includes */
+```shell
 
 let sent = 'Check to see if the word exist or not';
 
 let searchTerm = 'exist';
 
 console.log('Does the term exist? ' + (sent.includes(searchTerm)? 'Yes' : 'No'));
-/*Does the term exist? Yes*/
+//Does the term exist? Yes
+```
 
-let searchTerm = '';
-console.log('Does the term exist? ' + (sent.includes(searchTerm)? 'Yes' : 'No'));
-/*Does the term exist? Yes*/
+### slice 
 
-let searchTerm = 'null';
-console.log('Does the term exist? ' + (sent.includes(searchTerm)? 'Yes' : 'No'));
-/*Does the term exist? No*/
+- this method return the substring from the given index to the end of the end sentence.
 
-### slice - this method eliminates any character from the string that is before the given index and any that is after the second index if given.
-
-let searchTerm = 'null';
-console.log('Does the term exist? ' + (sent.includes(searchTerm)? 'Yes' : 'No'));
-/*Does the term exist? No*/
-
-/*Example Usage of slice */
-let sent = 'I am slicing this sentence apart.';
-
-console.log(sent.slice(2));
-/*am slicing this sentence apart.*/
-
-console.log(sent.slice(5,12));
-/*slicing*/
+- If two parameters are given instead of one, this method will return the substring from the beginning index to the ending index.
 
 
-let sent = '';
-console.log(sent.slice(0, -1));
-/* */
+### match 
 
-### match - this method returns any matches when matching a string against a regular expression.
+- this method returns any matches when matching a string against a regular expression.
 
-let sent = 'I have 22 apples and 5 oranges today already.';
-let regex = /[0-9]+/g;
-console.log(sent.match(regex));
-/*[22]*/
 
-let sent = '12 apples, -5 oranges, and -40 bananas';
-let regex = /[0-9]{2}/g;
-console.log(sent.match(regex));
-/*[12, 40] */
-# JavascriptProtoMethod
