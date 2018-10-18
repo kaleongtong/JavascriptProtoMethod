@@ -14,7 +14,7 @@ When a string that is not a number gets passed into parseFloat the function will
 
 This function takes a number and prints it out in its exponential form
 
-### toPrecision - 
+### toPrecision  
 
 This function will round up a number to a specified digit.
 
